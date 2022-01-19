@@ -17,23 +17,23 @@ Music
 ## Required Techniques
 
 At least one example or equivalent of each of the below: 
-[x] Array or List  
-[x] Loop  
-[x] Method  
-[x] Class  
-[x] Interface  
-[x] Encapsulation   
-[x] Abstraction  
-[-] Comment  
-[x] Inheritance  
-[-] Polymorphism
+- [x] Array or List  
+- [x] Loop  
+- [x] Method  
+- [x] Class  
+- [x] Interface  
+- [x] Encapsulation   
+- [x] Abstraction  
+- [ ] Comment  
+- [x] Inheritance  
+- [ ] Polymorphism
 
 
 ## Plan
-1. Create a basic architecture without external components (eg. Database) [x] 
-2. Create the business logic without external components [x] 
-3. Integrate with external components [-] 
-4. Create the GUI [-] 
+- [x] Create a basic architecture without external components (eg. Database)  
+- [x] Create the business logic without external components  
+- [ ] Integrate with external components
+- [ ] Create the GUI
 
 ## For running tests and show coverage
 
