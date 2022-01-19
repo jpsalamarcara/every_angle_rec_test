@@ -26,18 +26,22 @@ At least one example or equivalent of each of the below:
 - [x] Abstraction  
 - [ ] Comment  
 - [x] Inheritance  
-- [ ] Polymorphism
+- [x] Polymorphism
 
 
 ## Plan
 - [x] Create a basic architecture without external components (eg. Database)  
 - [x] Create the business logic without external components  
-- [ ] Integrate with external components
+- [x] Integrate with external components
 - [ ] Create the GUI
 
 ## For running tests and show coverage
 
 ````shell
+# Install dependencies
 python3 -m pip install -r requirements.txt
-pytest --cov=media_library --cov-report term-missing tests/
+# Run tests using mongo datasource (73% coverage)
+DATASOURCE=MONGO pytest --cov=media_library --cov-report term-missing tests/
+# Run tests using in-memory datasource (81% coverage)
+DATASOURCE=INMEMORY pytest --cov=media_library --cov-report term-missing tests/
 ````

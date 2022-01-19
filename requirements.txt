@@ -1,3 +1,5 @@
 injector==0.18.4
+mongoengine==0.23.1
+mongomock==3.23.0
 pytest==6.2.5
 pytest-cov==3.0.0
