@@ -6,7 +6,12 @@
 </head>
 <body>
 <div class="container">
-    <h2 class="display-2">Media Library</h2>
+    <h6 class="display-2">Media Library</h6>
+    <div class="input-group mb-3">
+        <label class="form-control">Name</label>
+        <label class="form-control">Media type</label>
+        <label class="form-control">Location</label>
+    </div>
     {% for item in items %}
     <p>
     <form method="POST">
@@ -15,10 +20,14 @@
             <input type="text" title="Media type" value="{{item.media_type}}" name="media_type" class="form-control">
             <input type="text" title="Location" value="{{item.location}}" name="location" class="form-control">
             <div class="input-group-append" id="button-addon2">
-                <button class="btn btn-outline-secondary" type="submit" formaction="/library/modify/{{item.uid}}">Update</button>
+                <button class="btn btn-outline-secondary" type="submit" formaction="/library/modify/{{item.uid}}">
+                    Update
+                </button>
             </div>
             <div class="input-group-append">
-                 <button class="btn btn-outline-secondary" type="submit" formaction="/library/delete/{{item.uid}}" >Delete</button>
+                <button class="btn btn-outline-secondary" type="submit" formaction="/library/delete/{{item.uid}}">
+                    Delete
+                </button>
             </div>
         </div>
     </form>

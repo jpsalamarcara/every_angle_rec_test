@@ -10,6 +10,16 @@ project_dir = os.path.dirname(os.path.abspath(__file__))
 service = default_injector.get(ItemDataSource)
 
 
+@app.errorhandler(Exception)
+def handle_errors(exception):
+    message = 'internal server error'
+    error_type = "Error!"
+    if isinstance(exception, AssertionError):
+        message = str(exception)
+        error_type = "Validation"
+    return render_template("error.html", error_message=message, error_type=error_type)
+
+
 @app.route("/", methods=["GET"])
 def index():
     return render_template("index.html", items=service.get())
