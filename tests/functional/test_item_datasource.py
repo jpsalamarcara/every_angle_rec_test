@@ -42,7 +42,7 @@ def test_get(retrieved, item):
 
 
 def test_delete(datasource, retrieved):
-    datasource.delete(retrieved)
+    datasource.delete(retrieved.uid)
     items = datasource.get(name=retrieved.name, media_type=retrieved.media_type, location=retrieved.location)
     assert len(items) == 0
 
