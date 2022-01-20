@@ -34,7 +34,7 @@ class MongoItemDataSource(ItemDataSource):
             query['location'] = location
         return [self.__parse__(row) for row in self.storage.objects(**query).all()]
 
-    def delete(self, item: Item):
-        row = self.storage.objects(uid=item.uid).first() if item.uid is not None else None
+    def delete(self, uid):
+        row = self.storage.objects(uid=uid).first() if uid is not None else None
         if row:
             row.delete()

@@ -15,5 +15,5 @@ class ItemDataSource(abc.ABC):
         pass  # pragma: no cover
 
     @abc.abstractmethod
-    def delete(self, item: Item):
+    def delete(self, uid):
         pass  # pragma: no cover

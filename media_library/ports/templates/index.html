@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Media Library</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2 class="display-2">Media Library</h2>
+    {% for item in items %}
+    <p>
+    <form method="POST">
+        <div class="input-group mb-3">
+            <input type="text" title="Name" value="{{item.name}}" name="name" class="form-control">
+            <input type="text" title="Media type" value="{{item.media_type}}" name="media_type" class="form-control">
+            <input type="text" title="Location" value="{{item.location}}" name="location" class="form-control">
+            <div class="input-group-append" id="button-addon2">
+                <button class="btn btn-outline-secondary" type="submit" formaction="/library/modify/{{item.uid}}">Update</button>
+            </div>
+            <div class="input-group-append">
+                 <button class="btn btn-outline-secondary" type="submit" formaction="/library/delete/{{item.uid}}" >Delete</button>
+            </div>
+        </div>
+    </form>
+    {% endfor %}
+    <form method="POST" action="/library/add/">
+        <div class="input-group mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Type a name">
+            <input type="text" name="media_type" class="form-control" placeholder="Type a media type">
+            <input type="text" name="location" class="form-control" placeholder="Type a location">
+            <div class="input-group-append" id="button-addon">
+                <button class="btn btn-outline-primary" type="submit" value="update">Create new</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

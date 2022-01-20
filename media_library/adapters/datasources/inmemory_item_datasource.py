@@ -41,7 +41,6 @@ class InMemoryItemDataSource(ItemDataSource):
             query['location'] = location
         return [x for x in self.__filter_data__(query)]
 
-    def delete(self, item: Item):
-        key = item.uid
-        assert key is not None
-        del self.storage[key]
+    def delete(self, uid):
+        assert uid is not None
+        del self.storage[uid]

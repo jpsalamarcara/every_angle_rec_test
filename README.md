@@ -33,7 +33,7 @@ At least one example or equivalent of each of the below:
 - [x] Create a basic architecture without external components (eg. Database)  
 - [x] Create the business logic without external components  
 - [x] Integrate with external components
-- [ ] Create the GUI
+- [x] Create the GUI
 
 ## For running tests and show coverage
 
@@ -44,4 +44,11 @@ python3 -m pip install -r requirements.txt
 DATASOURCE=MONGO pytest --cov=media_library --cov-report term-missing tests/
 # Run tests using in-memory datasource (81% coverage)
 DATASOURCE=INMEMORY pytest --cov=media_library --cov-report term-missing tests/
+````
+
+## For running the GUI
+
+````shell
+python3 -m media_library.ports.gui
+# go to  http://127.0.0.1:5000/
 ````
